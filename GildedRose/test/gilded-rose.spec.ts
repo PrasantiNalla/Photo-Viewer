@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { Item, GildedRose } from '../app/gilded-rose';
+import { specials } from '../app/gilded-rose';
 
 describe('Gilded Rose', function () {
 
@@ -96,12 +97,28 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(80);
     });
 
-    // 
-    // it('should foo', function() {
-    //     const gildedRose = new GildedRose([ new Item('foo', 0, 0) ]);
-    //     const items = gildedRose.updateQuality();
-    //     expect(items[0].name).to.equal('fixme');
-    // });
-    // 
+    // it should reduce quality of Conjured Mana Cake by 2
+    it('should reduce quality of Conjured Mana Cake by 2', function () {
+        const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 3, 33)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(31);
+    });
+
+
+    // it should reduce quality of Conjured Mana Cake by 4 if sellIn <0
+    it('should reduce quality of Conjured Mana Cake by 4 if sellIn <0', function () {
+        const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 0, 25)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(21);
+    });
+
+
+    /*
+    it('should foo', function() {
+        const gildedRose = new GildedRose([ new Item('foo', 0, 0) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).to.equal('fixme');
+    });
+    */
 
 });
