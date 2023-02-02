@@ -18,11 +18,10 @@ function App() {
       <div className='child'>
         {imageUrls.map((url) => {
           return (
-            <img key={url} src={url} onClick={() => setImage(url)} />
+            <img className='selImg' key={url} src={url} onClick={() => setImage(url)} />
           )
         })}
       </div>
-
     </div>
   );
 }

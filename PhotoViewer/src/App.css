@@ -9,6 +9,11 @@
 
 }
 
+.selImg:active {
+  border: 2px solid rgb(115, 115, 175);
+  border-radius: 7px;
+}
+
 img {
   width: 300px;
   height: auto;
