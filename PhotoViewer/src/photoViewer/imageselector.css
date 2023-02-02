@@ -1,3 +1,6 @@
-imageselector.css .image-viewer {
-    display: grid;
-}
+ .image-viewer {
+     display: grid;
+     width: 100px;
+     height: 100px;
+ }
+

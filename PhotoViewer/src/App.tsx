@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React, { useState, useEffect, useRef } from 'react'
+import { PhotoViewer } from './photoViewer/photoviewer';
 import './App.css'
+import { imageUrls } from './photoViewer/imageselector';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [image, setImage] = useState();
+
+
+  function previewImage() {
+
+
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <h1>React Photo Viewer</h1>
+      <PhotoViewer url="https://picsum.photos/id/600/1600/900.jpg" />
+      <h3 className='grid'>Select a image to preview</h3>
+      <div className='child'>
+        {imageUrls.map((url) => {
+          return (
+            <img key={url} src={url} onClick={previewImage} />
+          )
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
 
-export default App
+    </div>
+  );
+}
+export default App;
+
+
+

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from 'react';
 import './imageselector.css';
 
 const brokenImages = [
     1, 24, 32, 36, 44, 47
 ];
-function ImageSelector() {
+function getImageUrls() {
     const urls = [];
 
     for (let i = 0; i < 50; i++) {
@@ -16,4 +16,5 @@ function ImageSelector() {
 
     return urls;
 }
-export const imageSelection = ImageSelector();
+export const imageUrls = getImageUrls();
+
