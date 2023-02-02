@@ -14,6 +14,11 @@ function App() {
       <div>
         <PhotoViewer url={image} />
       </div>
+      {/* <form className="toggleBar" method="post" action={image + 1}>
+        <button className="next">Next</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button className="previous">Previous</button>
+
+      </form> */}
       <h3 className='grid'>Select a image to preview</h3>
       <div className='child'>
         {imageUrls.map((url) => {
